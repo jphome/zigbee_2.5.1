@@ -1,0 +1,10 @@
+# 忽略iar工程文件
+_iss/
+Tools/
+Exe/
+List/
+Obj/
+bin/
+*Debug/
+tools
+

@@ -1,0 +1,14 @@
+[DebugChecksum]
+Checksum=-1409129453
+[Log file]
+LoggingEnabled=_ 0
+LogFile=_ ""
+Category=_ 0
+[Breakpoints]
+Count=0
+[ChipconEmu]
+Stop timers on halt=1
+Leave target running=1
+[Aliases]
+Count=0
+SuppressDialog=0
