@@ -176,8 +176,6 @@ void SampleApp_Init( uint8 task_id )
 	SampleApp_NwkState = DEV_INIT;
 	SampleApp_TransID = 0;
 
-	HalLedBlink( HAL_LED_1, 0, 50, 500 );
-
 	// Device hardware initialization can be added here or in main() (Zmain.c).
 	// If the hardware is application specific - add it here.
 	// If the hardware is other parts of the device add it in main().
@@ -213,7 +211,7 @@ void SampleApp_Init( uint8 task_id )
 #endif
 #endif
 
-	// 设置定时器中断的目的地址(Setup for the periodic message's destination address)
+	// 设置定时器中断发送周期性消息的目的地址(Setup for the periodic message's destination address)
 	// 广播到所有节点(Broadcast to everyone)
 	SampleApp_Periodic_DstAddr.addrMode = (afAddrMode_t)AddrBroadcast;
 	SampleApp_Periodic_DstAddr.endPoint = SAMPLEAPP_ENDPOINT;
@@ -227,8 +225,7 @@ void SampleApp_Init( uint8 task_id )
 	// Fill out the endpoint description.
 	SampleApp_epDesc.endPoint = SAMPLEAPP_ENDPOINT;
 	SampleApp_epDesc.task_id = &SampleApp_TaskID;
-	SampleApp_epDesc.simpleDesc
-	= (SimpleDescriptionFormat_t *)&SampleApp_SimpleDesc;
+	SampleApp_epDesc.simpleDesc = (SimpleDescriptionFormat_t *)&SampleApp_SimpleDesc;
 	SampleApp_epDesc.latencyReq = noLatencyReqs;
 
 	// 在AF层登记应用对象(Register the endpoint description with the AF)
@@ -242,8 +239,10 @@ void SampleApp_Init( uint8 task_id )
 	osal_memcpy( SampleApp_Group.name, "Group 1", 7  );
 	aps_AddGroup( SAMPLEAPP_ENDPOINT, &SampleApp_Group );
 
-	HalLedBlink( HAL_LED_1, 0, 50, 500 );
-	//HalLedSet( HAL_LED_1, HAL_LED_MODE_OFF );
+#if 0
+	HalLedBlink( HAL_LED_1, 0, 10, 500 );
+	HalLedSet( HAL_LED_1, HAL_LED_MODE_ON );
+#endif
 }
 
 /*********************************************************************
@@ -363,6 +362,12 @@ void SampleApp_HandleKeys( uint8 shift, uint8 keys )
 {
 	(void)shift;  // Intentionally unreferenced parameter
 
+	if ( keys & HAL_KEY_SW_6 )
+	{
+		HalLedBlink( HAL_LED_1, 0, 10, 500 );
+		//SampleApp_SendFlashMessage( SAMPLEAPP_FLASH_DURATION );
+	}
+
 	if ( keys & HAL_KEY_SW_1 )
 	{
 		/* This key sends the Flash Command is sent to Group 1.
@@ -427,7 +432,7 @@ void SampleApp_MessageMSGCB( afIncomingMSGPacket_t *pkt )
 
 		case SAMPLEAPP_FLASH_CLUSTERID:
 			flashTime = BUILD_UINT16(pkt->cmd.Data[1], pkt->cmd.Data[2] );
-			HalLedBlink( HAL_LED_4, 4, 50, (flashTime / 4) );
+			HalLedBlink( HAL_LED_1, 4, 50, (flashTime / 4) );
 			break;
 	}
 }

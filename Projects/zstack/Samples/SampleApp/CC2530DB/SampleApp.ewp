@@ -274,9 +274,7 @@
         </option>
         <option>
           <name>CCDefines</name>
-          <state>BUILD_ALL_DEVICES</state>
-          <state>HOLD_AUTO_START</state>
-          <state>HAL_UART=FALSE</state>
+          <state></state>
         </option>
         <option>
           <name>CCPreprocFile</name>
@@ -4757,13 +4755,13 @@
       <name>$PROJ_DIR$\..\..\..\..\..\Components\stack\zdo\ZDNwkMgr.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\Components\stack\zdo\ZDNwkMgr.h</name>
+      <name>$PROJ_DIR$\..\..\..\..\..\COMPONENTS\stack\zdo\ZDNwkMgr.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\..\..\Components\stack\zdo\ZDObject.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\Components\stack\zdo\ZDObject.h</name>
+      <name>$PROJ_DIR$\..\..\..\..\..\COMPONENTS\stack\zdo\ZDObject.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\..\..\COMPONENTS\stack\zdo\ZDProfile.c</name>
