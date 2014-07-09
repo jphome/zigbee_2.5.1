@@ -7,4 +7,5 @@ Obj/
 bin/
 *Debug/
 tools
-
+!/Projects/zstack/Libraries/*/bin
+SI/
