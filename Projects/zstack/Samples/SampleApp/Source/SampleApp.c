@@ -72,6 +72,8 @@
 #include "hal_led.h"
 #include "hal_key.h"
 
+#include "./base_func/base_func.h"
+
 /*********************************************************************
  * MACROS
  */
@@ -156,6 +158,10 @@ void SampleApp_SendFlashMessage( uint16 flashTime );
  * PUBLIC FUNCTIONS
  */
 
+static void SerialApp_CallBack(uint8 port, uint8 event)
+{
+	;
+}
 /*********************************************************************
  * @fn      SampleApp_Init
  *
@@ -180,26 +186,10 @@ void SampleApp_Init( uint8 task_id )
 	// If the hardware is application specific - add it here.
 	// If the hardware is other parts of the device add it in main().
 
-#if 0
-#if defined ( BUILD_ALL_DEVICES )
-	/**
-	 * 通过在编译的时候加 BUILD_ALL_DEVICES 宏可以将同一套代码编译成协调、路由节点
-	 */
-	// The "Demo" target is setup to have BUILD_ALL_DEVICES and HOLD_AUTO_START
-	// We are looking at a jumper (defined in SampleAppHw.c) to be jumpered
-	// together - if they are - we will start up a coordinator. Otherwise,
-	// the device will start as a router.
-	if ( readCoordinatorJumper() )
-	{
-		zgDeviceLogicalType = ZG_DEVICETYPE_COORDINATOR;
-	}
-	else
-	{
-		zgDeviceLogicalType = ZG_DEVICETYPE_ROUTER;
-	}
-#endif // BUILD_ALL_DEVICES
-#endif
-
+	uart_init(SerialApp_CallBack);
+	uint8 *sendBuf="SerialApp_Init\n";  
+	HalUARTWrite(SERIAL_APP_PORT,sendBuf,osal_strlen((char *)sendBuf));
+	
 	zgDeviceLogicalType = ZG_DEVICETYPE_COORDINATOR;
 
 #if 0

@@ -4234,6 +4234,9 @@
   <group>
     <name>App</name>
     <file>
+      <name>$PROJ_DIR$\..\Source\base_func\base_func.c</name>
+    </file>
+    <file>
       <name>$PROJ_DIR$\..\Source\OSAL_SampleApp.c</name>
     </file>
     <file>
@@ -4755,13 +4758,13 @@
       <name>$PROJ_DIR$\..\..\..\..\..\Components\stack\zdo\ZDNwkMgr.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\COMPONENTS\stack\zdo\ZDNwkMgr.h</name>
+      <name>$PROJ_DIR$\..\..\..\..\..\Components\stack\zdo\ZDNwkMgr.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\..\..\Components\stack\zdo\ZDObject.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\COMPONENTS\stack\zdo\ZDObject.h</name>
+      <name>$PROJ_DIR$\..\..\..\..\..\Components\stack\zdo\ZDObject.h</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\..\..\..\..\COMPONENTS\stack\zdo\ZDProfile.c</name>
