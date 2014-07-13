@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>DemoApp/EndDeviceEB</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>312</Column0><Column1>7</Column1><Column2>27</Column2><Column3>0</Column3></ColumnWidths>
+      </Workspace>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1035</ColumnWidth1><ColumnWidth2>276</ColumnWidth2><ColumnWidth3>69</ColumnWidth3></Build>
+      <TerminalIO/>
+    <SourceBrowser/></Static>
+    <Windows>
+      
+      
+    <Wnd0>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-5810-17260</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>DemoApp</ExpandedNode><ExpandedNode>DemoApp/App</ExpandedNode><ExpandedNode>DemoApp/Tools</ExpandedNode></NodeDict></Session>
+          </Tab>
+        <Tab><Identity>TabID-12631-31038</Identity><TabName>Source Browser</TabName><Factory>SourceBrowser</Factory><Session><TypeFilter>2147483647</TypeFilter><FileFilter>1</FileFilter></Session></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd1>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-31259-17397</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd1></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\..\..\..\..\..\PROJECT\RF\ZIGBEE\CODE\ZIGBEE_2.5.1\PROJECTS\ZSTACK\SAMPLES\DEMOAPP\SOURCE\DemoApp.c</Filename><XPos>0</XPos><YPos>124</YPos><SelStart>2895</SelStart><SelEnd>2895</SelEnd></Tab><ActiveTab>0</ActiveTab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-012eaa48><key>iaridepm.enu1</key></Toolbar-012eaa48></Sizes></Row0></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>628</Bottom><Right>366</Right><x>-2</x><y>-2</y><xscreen>266</xscreen><yscreen>310</yscreen><sizeHorzCX>279706</sizeHorzCX><sizeHorzCY>342920</sizeHorzCY><sizeVertCX>386961</sizeVertCX><sizeVertCY>696903</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>231</Bottom><Right>953</Right><x>-2</x><y>-2</y><xscreen>955</xscreen><yscreen>233</yscreen><sizeHorzCX>1004206</sizeHorzCX><sizeHorzCY>257743</sizeHorzCY><sizeVertCX>279706</sizeVertCX><sizeVertCY>342920</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+
