@@ -137,3 +137,44 @@ BUILD_UINT8(高4位, 低4位)
 //		按键绑定
 // 场景: 网络中不一定有协调器存在，但是有A、B、C、D等多个节点，A性质是Outcluster，B、C、D的性质是Incluster，你可以通过按键策略来在一定时间内允许B、C、D中的任何一个开启被Match的功能
 // 两个节点一定时间(16s)内都按键调用ZDP_EndDeviceBindReq()函数
+
+
+// 主动触发事件
+osal_set_event(task_id, ZB_ENTRY_EVENT);
+
+
+// 绑定
+afSetMatch(sapi_epDesc.simpleDesc->EndPoint, TRUE);		// 允许绑定
+afSetMatch(sapi_epDesc.simpleDesc->EndPoint, FALSE);	// 取消允许绑定
+
+
+// 获取pan_id
+uint16 pan_id = 0;
+zb_GetDeviceInfo(ZB_INFO_PAN_ID, &pan_id);
+
+// 将配置写到flash
+zb_WriteConfiguration();
+// 从flash读配置
+zb_ReadConfiguration();
+
+zb_WriteConfiguration(ZCD_NV_PANID, sizeof(uint16), &pan_id);				// PANID
+uint8 logicalType = 0;		// ZG_DEVICETYPE_ENDDEVICE/ZG_DEVICETYPE_COORDINATOR/ZG_DEVICETYPE_ROUTER
+zb_ReadConfiguration(ZCD_NV_LOGICAL_TYPE, sizeof(uint8), &logicalType);		// ZC/ZR/ZED
+
+
+// 设备复位
+uint8 startOptions = ZCD_STARTOPT_CLEAR_STATE | ZCD_STARTOPT_CLEAR_CONFIG;		// 清状态、配置
+zb_WriteConfiguration( ZCD_NV_STARTUP_OPTION, sizeof(uint8), &startOptions );
+zb_SystemReset();			// 设备重启
+
+// 按键配置设备为Coordinator(在没有ZC的环境中启动)
+zb_ReadConfiguration( ZCD_NV_LOGICAL_TYPE, sizeof(uint8), &logicalType );
+if ( logicalType != ZG_DEVICETYPE_ENDDEVICE )
+{
+	logicalType = ZG_DEVICETYPE_COORDINATOR;
+	zb_WriteConfiguration(ZCD_NV_LOGICAL_TYPE, sizeof(uint8), &logicalType);
+}
+zb_ReadConfiguration( ZCD_NV_STARTUP_OPTION, sizeof(uint8), &startOptions );
+startOptions = ZCD_STARTOPT_AUTO_START;
+zb_WriteConfiguration( ZCD_NV_STARTUP_OPTION, sizeof(uint8), &startOptions );
+zb_SystemReset();

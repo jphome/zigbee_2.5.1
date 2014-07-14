@@ -48,7 +48,8 @@ const SimpleDescriptionFormat_t DemoApp_SimpleDesc =
 
 uint8 DemoApp_TaskID;
 endPointDesc_t DemoApp_epDesc;
-devStates_t DemoApp_NwkState;
+devStates_t DemoApp_NwkState;			// 记录节点类型(ZC/ZR/ZED)
+static uint8 myAppState = APP_INIT;		// 记录启动状态
 uint8 DemoApp_TransID;
 
 afAddrType_t DemoApp_Broadcast_DstAddr;
@@ -152,14 +153,22 @@ uint16 DemoApp_ProcessEvent(uint8 task_id, uint16 events)
 						osal_start_timerEx(DemoApp_TaskID,
 					          DemoApp_SEND_PERIODIC_MSG_EVT,
 					          DemoApp_SEND_PERIODIC_MSG_TIMEOUT);
+						myAppState = APP_START;
 					}
 					else if (DEV_ROUTER == DemoApp_NwkState)
 					{
 						HalLedBlink(HAL_LED_1, 2, 80, 500);
+						myAppState = APP_START;
 					}
 					else if (DEV_END_DEVICE == DemoApp_NwkState)
 					{
 						HalLedBlink(HAL_LED_1, 3, 70, 500);
+						myAppState = APP_START;
+					}
+					/* 没自动起来/没加入网络 */
+					else (DEV_HOLD == DemoApp_NwkState || DEV_INIT == DemoApp_NwkState)
+					{
+						;		// ZDOInitDevice();
 					}
 					break;
 

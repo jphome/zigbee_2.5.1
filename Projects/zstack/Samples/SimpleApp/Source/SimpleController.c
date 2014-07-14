@@ -157,9 +157,7 @@ void zb_HandleKeys( uint8 shift, uint8 keys )
 		{
 			if ( myAppState == APP_INIT  )
 			{
-				// In the init state, keys are used to indicate the logical mode.
-				// Key 1 starts device as a coordinator
-
+				// 按键1: 将设备配置成ZC
 				zb_ReadConfiguration( ZCD_NV_LOGICAL_TYPE, sizeof(uint8), &logicalType );
 				if ( logicalType != ZG_DEVICETYPE_ENDDEVICE )
 				{

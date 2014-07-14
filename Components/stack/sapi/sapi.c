@@ -1,3 +1,5 @@
+// http://blog.chinaunix.net/uid-20788636-id-1841401.html
+
 /**************************************************************************************************
   Filename:       sapi.c
   Revised:        $Date: 2010-05-03 17:46:57 -0700 (Mon, 03 May 2010) $
@@ -767,7 +769,7 @@ UINT16 SAPI_ProcessEvent( byte task_id, UINT16 events )
           {
             SAPI_StartConfirm( ZB_SUCCESS );
           }
-          else  if (pMsg->status == DEV_HOLD ||
+          else if (pMsg->status == DEV_HOLD ||
                   pMsg->status == DEV_INIT)
           {
             SAPI_StartConfirm( ZB_INIT );
@@ -818,6 +820,7 @@ UINT16 SAPI_ProcessEvent( byte task_id, UINT16 events )
     return (events ^ SYS_EVENT_MSG);
   }
 
+	// 允许绑定时间事件，也就是绑定时间到，没有绑定成功时执行
   if ( events & ZB_ALLOW_BIND_TIMER )
   {
     afSetMatch(sapi_epDesc.simpleDesc->EndPoint, FALSE);
@@ -961,10 +964,10 @@ void SAPI_Init( byte task_id )
 	afRegister( &sapi_epDesc );
 #endif
 
-	// Turn off match descriptor response by default
+	// 关闭描述符匹配响应请求 默认是关闭的 在zb_AllowBind()函数中打开
 	afSetMatch(sapi_epDesc.simpleDesc->EndPoint, FALSE);
 
-	// Register callback evetns from the ZDApp
+	// 注册网络地址响应、描述符匹配响应
 	ZDO_RegisterForZDOMsg( sapi_TaskID, NWK_addr_rsp );
 	ZDO_RegisterForZDOMsg( sapi_TaskID, Match_Desc_rsp );
 
@@ -976,6 +979,7 @@ void SAPI_Init( byte task_id )
 	if ( HalKeyRead () == HAL_KEY_SW_5)
 	{
 		// If SW5 is pressed and held while powerup, force auto-start and nv-restore off and reset
+		// 如果按着SW5启动，则关闭自动启动复位
 		uint8 startOptions = ZCD_STARTOPT_CLEAR_STATE | ZCD_STARTOPT_CLEAR_CONFIG;
 		zb_WriteConfiguration( ZCD_NV_STARTUP_OPTION, sizeof(uint8), &startOptions );
 		zb_SystemReset();

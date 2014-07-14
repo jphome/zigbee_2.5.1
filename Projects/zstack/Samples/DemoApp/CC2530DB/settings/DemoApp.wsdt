@@ -12,7 +12,7 @@
           
           
           
-        <Column0>312</Column0><Column1>7</Column1><Column2>27</Column2><Column3>0</Column3></ColumnWidths>
+        <Column0>295</Column0><Column1>7</Column1><Column2>27</Column2><Column3>0</Column3></ColumnWidths>
       </Workspace>
       <Build>
         
@@ -53,14 +53,14 @@
       
       
       
-    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\..\..\..\..\..\PROJECT\RF\ZIGBEE\CODE\ZIGBEE_2.5.1\PROJECTS\ZSTACK\SAMPLES\DEMOAPP\SOURCE\DemoApp.c</Filename><XPos>0</XPos><YPos>124</YPos><SelStart>2895</SelStart><SelEnd>2895</SelEnd></Tab><ActiveTab>0</ActiveTab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\..\..\..\..\..\PROJECT\RF\ZIGBEE\CODE\ZIGBEE_2.5.1\PROJECTS\ZSTACK\SAMPLES\DEMOAPP\SOURCE\DemoApp.c</Filename><XPos>0</XPos><YPos>124</YPos><SelStart>3254</SelStart><SelEnd>3254</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\..\..\..\..\..\PROJECT\RF\ZIGBEE\CODE\ZIGBEE_2.5.1\PROJECTS\ZSTACK\TOOLS\CC2530DB\f8wConfig.cfg</Filename><XPos>0</XPos><YPos>55</YPos><SelStart>2164</SelStart><SelEnd>2164</SelEnd></Tab><ActiveTab>1</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\..\..\..\..\..\PROJECT\RF\ZIGBEE\CODE\ZIGBEE_2.5.1\PROJECTS\ZSTACK\TOOLS\CC2530DB\f8w2530.xcl</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>239</SelStart><SelEnd>239</SelEnd></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
     <Positions>
       
       
       
       
       
-    <Top><Row0><Sizes><Toolbar-012eaa48><key>iaridepm.enu1</key></Toolbar-012eaa48></Sizes></Row0></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>628</Bottom><Right>366</Right><x>-2</x><y>-2</y><xscreen>266</xscreen><yscreen>310</yscreen><sizeHorzCX>279706</sizeHorzCX><sizeHorzCY>342920</sizeHorzCY><sizeVertCX>386961</sizeVertCX><sizeVertCY>696903</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>231</Bottom><Right>953</Right><x>-2</x><y>-2</y><xscreen>955</xscreen><yscreen>233</yscreen><sizeHorzCX>1004206</sizeHorzCX><sizeHorzCY>257743</sizeHorzCY><sizeVertCX>279706</sizeVertCX><sizeVertCY>342920</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+    <Top><Row0><Sizes><Toolbar-012eaa48><key>iaridepm.enu1</key></Toolbar-012eaa48></Sizes></Row0></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>324</Bottom><Right>366</Right><x>-2</x><y>-2</y><xscreen>266</xscreen><yscreen>310</yscreen><sizeHorzCX>195015</sizeHorzCX><sizeHorzCY>516667</sizeHorzCY><sizeVertCX>269795</sizeVertCX><sizeVertCY>543333</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>231</Bottom><Right>1366</Right><x>-2</x><y>-2</y><xscreen>1368</xscreen><yscreen>233</yscreen><sizeHorzCX>1002933</sizeHorzCX><sizeHorzCY>388333</sizeHorzCY><sizeVertCX>195015</sizeVertCX><sizeVertCY>516667</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
   </Desktop>
 </Workspace>
 
